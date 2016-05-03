@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="50dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_play_circle_outline_black_24dp"
+        android:id="@+id/item_music_image_playing"
+        android:layout_alignBottom="@+id/item_music_artist"
+        android:layout_margin="5dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/item_music_title"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/item_music_image_playing"
+        android:layout_toEndOf="@+id/item_music_image_playing" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/item_music_id"
+        android:layout_below="@+id/item_music_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/item_music_artist"
+        android:layout_below="@+id/item_music_title"
+        android:layout_toRightOf="@+id/item_music_image_playing"
+        android:layout_toEndOf="@+id/item_music_image_playing" />
+</RelativeLayout>

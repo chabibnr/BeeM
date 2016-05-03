@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Bee Music</string>
+    <string name="player_prev">Prev</string>
+    <string name="player_next">Next</string>
+    <string name="player_pause">Pause</string>
+    <string name="player_play">Play</string>
+    <string name="player_stop">Stop</string>
+    <string name="action_settings">Settings</string>
+</resources>

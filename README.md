@@ -10,3 +10,6 @@ Bee Music - Aplikasi pemutar musik untuk Android
 
 # Proses
 ![Tampilan Awal](https://raw.githubusercontent.com/chabibnr/BeeM/master/screenshot/proses.png)
+
+# Download
+Jika anda ingin mencoba demo untuk BeeM (Bee Music), Anda bisa mengunduhnya [Disini](https://github.com/chabibnr/BeeM/tree/master/release) 

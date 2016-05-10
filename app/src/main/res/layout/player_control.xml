@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="150dp"
+    android:background="@color/colorPrimary"
+    >
+
+    <RelativeLayout
+        android:layout_width="230dp"
+        android:layout_height="80dp"
+        android:layout_above="@+id/playerSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout2">
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:text="@string/player_next"
+            android:id="@+id/playerNextButton"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@drawable/player_control_next_corner"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/playerPausePlayButton"
+            android:layout_toEndOf="@+id/playerPausePlayButton"
+            android:layout_marginLeft="-10dp" />
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:text="@string/player_prev"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@drawable/player_control_prev_corner"
+            android:id="@+id/playerPrevButton"
+            android:layout_alignTop="@+id/playerNextButton"
+            android:layout_toLeftOf="@+id/playerPausePlayButton"
+            android:layout_toStartOf="@+id/playerPausePlayButton"
+            android:layout_marginRight="-10dp" />
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:text="@string/player_play"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/playerPausePlayButton"
+            android:background="@drawable/player_control_play_pause_corner"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/playerSeekBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:max="100"
+        android:indeterminate="false" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/relativeLayout2"
+        android:layout_toEndOf="@+id/relativeLayout2"
+        android:layout_alignTop="@+id/relativeLayout2"
+        android:layout_above="@+id/playerSeekBar">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="00:00"
+                android:textColor="@color/text"
+                android:id="@+id/playerCurrentTime" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="of"
+                android:textColor="@color/colorPrimaryLight"
+                android:id="@+id/textView2"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="00:00"
+                android:id="@+id/playerTotalTime" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relativeLayout2">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/playerTextInfo"
+            android:textColor="@color/text"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/playerStop"
+            android:layout_alignBottom="@+id/playerTextInfo"
+            android:layout_toRightOf="@+id/playerTextInfo"
+            android:layout_toEndOf="@+id/playerTextInfo"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

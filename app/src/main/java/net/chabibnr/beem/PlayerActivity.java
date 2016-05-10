@@ -92,10 +92,15 @@ public class PlayerActivity extends AppCompatActivity {
         mMusicListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView getIdMusic = (TextView) view.findViewById(R.id.item_music_id);
-                String sId = getIdMusic.getText().toString();
-                playerControl.setMusicUri(Integer.parseInt(sId));
-                playerControl.play(position);
+
+                boolean isCurrent = (PlayerControl.getMusicPosition() != null && PlayerControl.getMusicPosition() == position);
+                if(!isCurrent) {
+                    HashMap<String, String> musicItem = getModel().getMusics().get(position);
+                    String sId = musicItem.get(MusicModel.MUSIC_ATTR_ID);
+
+                    playerControl.setMusicUri(Integer.parseInt(sId));
+                    playerControl.play(position);
+                }
             }
         });
 
@@ -104,8 +109,7 @@ public class PlayerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int position = (PlayerControl.getMusicPosition() != null && PlayerControl.getMusicPosition() > 0) ? PlayerControl.getMusicPosition() - 1: 0;
 
-                HashMap<String, String> musicItem = new HashMap<String, String>();
-                musicItem = getModel().getMusics().get(position);
+                HashMap<String, String> musicItem = getModel().getMusics().get(position);
                 String musicID = musicItem.get(MusicModel.MUSIC_ATTR_ID);
                 playerControl.setMusicUri(Integer.parseInt(musicID));
                 playerControl.play(position);
@@ -129,8 +133,10 @@ public class PlayerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(playerControl.isPlaying()){
                     playerControl.pause();
+                    playPauseMusic.setText(getString(R.string.player_play));
                 }else if(playerControl.getPercentageDuration() > 0){
                     playerControl.resume();
+                    playPauseMusic.setText(getString(R.string.player_pause));
                 }else {
                     int position = (PlayerControl.getMusicPosition() != null) ? PlayerControl.getMusicPosition() : 0;
 
